@@ -1,0 +1,103 @@
+@use "../../../../src/app/styles/media" as *;
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A0B2E;
+    padding: 16px;
+    position: relative;
+    align-items: center;
+    @include tablet{
+        width: 100%;
+        box-sizing: border-box;
+        gap: 100px;
+        padding: 37px 150px;
+    }
+    &.open{
+        background-color: #11071F;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 100;
+    }
+    &__nav{
+        display: none;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        flex-direction: column;
+        gap: 40px;
+        position: fixed;
+        top: 75px;
+        left: 0;
+        align-items: start;
+        padding: 48px 16px 150px;
+        text-transform: uppercase;
+        
+        &.open{
+            display: flex !important;
+            background-color: #11071F;
+        }
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            position: static;
+            padding: 0;
+            gap: 0;
+            background-color: transparent;
+            text-transform: none;
+        }
+    }
+    &__link{
+        @include tablet{
+            font-size: 20px;
+            padding: 20px;
+            line-height: 0%;
+        }
+
+        &:hover{
+            background: radial-gradient(50% 50% at 50% 50%, #763cac, rgba(50, 15, 133, 0));
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+    }
+    &__burger{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 101;
+        &.open span:nth-child(1){
+            transform: translateY(5px) rotate(45deg);
+        }
+        &.open span:nth-child(2){
+            transform: translateY(-6px) rotate(-45deg);
+        }
+        @include tablet{
+            display: none;
+        }
+    }
+    &__gradient{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 100%;
+    }
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 6px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
