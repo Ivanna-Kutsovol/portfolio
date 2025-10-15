@@ -1,0 +1,119 @@
+@use "../styles/media" as *;
+
+.experience{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    padding: 0 16px 80px;
+    @include tablet{
+        padding: 0 150px 100px;
+    }
+    &__title{
+        font-size: 32px;
+        @include tablet{
+            font-size: 40px;
+        }
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        justify-content: center;
+        @include tablet{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    } 
+    &__card{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        gap: 21px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 41px 9px;
+        box-shadow: 4px 7px 26px rgba(0, 0, 0, 0.12);
+        border-radius: 15px;
+        background: linear-gradient(110.49deg, #130428 10.29%, #251043 69.38% 65.38%, #38126d 90.77%, #261045 100.9%, #190634);
+        ::after{
+            content: "";
+            position: absolute;
+            height: 4px;
+            background-color: #4f228d;
+            top: 0;
+            width: 95%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            border-radius: 15px 15px 0 0;
+        }
+        @include tablet{
+            gap: 26px;
+            padding: 36px 130px 50px 41px;
+            &:hover{
+                background: linear-gradient(to right, #130428, #251043, #38126d, #261045, #190634);
+                transition: 0.5s;
+                background-position: right top;
+                transition: background-position 1s ease;
+                background-size: 200% 200%;
+            }
+        }
+    }  
+    &__cardText{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+        justify-content: center;
+    }    
+    &__cardTitle{
+        font-size: 20px;
+        @include tablet{
+            font-size: 26px;
+        }
+    }
+    &__cardDescription{
+        font-size: 8px;
+        line-height: 10px;
+        max-width: 230px;
+
+        @include tablet{
+        }
+    }
+    &__cardButton{
+        background-color: #2C1250;
+        border-radius: 8px;
+        padding: 10px 30px;
+        font-size: 10px;
+        line-height: 15px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        box-shadow: inset 0 0 0 1px #693B93;
+        cursor: pointer;
+        @include tablet{
+            &:hover{
+                background-color: #693B93;
+            }
+        }
+    }
+    &__icon{
+        @include tablet{
+            width: 120px;
+            height: 150px;
+        }
+    }
+}
+
+@media(min-width: 470px) and (max-width: 850px){
+    .experience{
+        min-width: 520px;
+        padding: 0 80px 120px;
+        &__card{
+            gap: 26px;
+            padding: 36px 130px 50px 41px;
+            justify-content: center;
+        }
+    }
+}
