@@ -32,12 +32,27 @@ function Contact() {
         }
     );
 
-    const onSubmit: SubmitHandler<FormData> = (data) => {
+    const onSubmit: SubmitHandler<FormData> = async(data) => {
         setIsSubmitting(true);
-        console.log(data);
-        setAlertText("Form successfully submitted!");
-        reset();
-        setTimeout(() => setIsSubmitting(false), 3000);
+        try{
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },  
+                body: JSON.stringify(data),
+                });
+
+            if(!response.ok){
+                throw new Error('Something went wrong');
+            }
+            const result = await response.json();
+            setAlertText("Form successfully submitted!");
+            reset();
+            setIsSubmitting(false);
+        } catch (error) {
+            setAlertText("Error submitting form. Please try again.");
+        }
     };
 
     return (
@@ -127,7 +142,7 @@ function Contact() {
                     {errors.message && <p className={stl.form__errors}>{errors.message.message}</p>}
                 </div>
                 <div className={stl.form__buttonContainer}>
-                <button disabled={isSubmitting} className={stl.form__button} type="submit">Submit</button>
+                <button disabled={isSubmitting} className={stl.form__button} type="submit">{isSubmitting ? "Sending..." : "Submit"}</button>
                 <p className={stl.form__text}>By submitting this form you read and agree to the <a className={stl.form__link}>Terms & Conditions</a> and <a className={stl.form__link}>our privacy policy</a>.</p>
                 </div>
             </form>
