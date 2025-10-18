@@ -1,0 +1,238 @@
+@use "../styles/media" as *;
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 16px;
+    @include tablet{
+        padding: 0 150px;
+        flex-direction: row;
+        gap: 115px;
+    }
+
+    &__main{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+    }
+    &__title{
+        font-size: 25px;
+    }
+    &__subtitle{
+        font-size: 15px;
+    }
+    &__line{
+        width: 100%;
+        height: 1px;
+        background-color: #FEFAEE;
+        @include tablet{
+            width: 80%;
+        }
+    }
+    &__date{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        @include tablet{
+            justify-content: flex-start;
+            gap: 110px;
+        }
+    }
+    &__dataItem{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__dateLink{
+        color: #FFFFFF80;
+        @include tablet{
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                color: #FFFFFF;
+            }
+        } 
+    }
+    &__social{
+        display: flex;
+        gap: 30px;
+    }
+    &__icon{
+        @include tablet{
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+    padding: 0 0 110px 0;
+    max-width: 560px;
+    @include tablet{
+        padding: 0 0 220px 0;
+    }
+    &__containerName{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @include tablet{
+            flex-direction: row;
+            gap: 6px;
+        }
+        & > * {
+            flex: 1;
+        }
+    }
+    &__item{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__input{
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #FEFAEE24;
+        border-radius: 24px;
+        color: #FEFAEE;
+        padding: 12px 24px;
+        font-size: 14px;
+        resize: none;
+        &[id="message"]{
+            height: 160px;
+        }
+        &::placeholder{
+            color: #FEFAEE50;
+        }
+        @include tablet{
+            &:hover{
+                border: 1px solid #FEFAEE;
+                transition: 0.5s;
+            }
+            &:focus{
+                border: 1px solid #FEFAEE;
+            }
+        }
+    }
+    &__button{
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #FEFAEE;
+        border-radius: 24px;
+        color: #FEFAEE;
+        padding: 10px 24px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        @include tablet{
+            width: fit-content;
+            font-size: 16px;
+            padding: 10px 32px;
+            transition: 0.5s;
+            text-transform: lowercase;
+            cursor: pointer;
+            &:hover{
+                background-color: #FEFAEE24;
+            }
+        }
+    }
+    &__buttonContainer{
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+    &__text{
+        font-size: 14px;
+    }
+    &__link{
+        color: #FFFFFF80;
+        @include tablet{
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                color: #FFFFFF;
+            }
+        }
+    }
+    &__errors{
+        position: absolute;
+        bottom: -25px;
+        right: 20px;
+        color: #802111;
+        font-size: 12px;
+    }
+}
+
+.alert {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: linear-gradient(135deg, #2C1250, #38126d);
+  color: white;
+  border: 1px solid #693B93;
+  border-radius: 12px;
+  padding: 16px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hide {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__button {
+    background: transparent;
+    border: 1px solid #9c63f9;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s, transform 0.2s;
+
+    &:hover {
+      background: #9c63f9;
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../app/styles/media" as *;
+
+.alert {
+    position: fixed;
+    display: flex;
+    bottom: 40px;
+    right: auto;
+    background: linear-gradient(135deg, #2C1250, #38126d);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    @include tablet {
+        right: 40px;
+        padding: 16px 28px;
+    }
+
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.hide {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    &__button {
+        background: transparent;
+        border: 1px solid #9c63f9;
+        color: #fff;
+        border-radius: 6px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 12px;
+        &:hover {
+          background: #9c63f9;
+          transform: scale(1.05);
+        }
+    }
+}
