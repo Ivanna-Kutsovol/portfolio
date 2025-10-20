@@ -1,0 +1,231 @@
+@use "../styles/media" as *;
+
+.project{
+    padding: 0 0 80px 0;
+    @include tablet{
+        padding: 160px 85px 240px 105px;
+    }
+    &__text{
+        font-size: 16px;
+        color: #9857D3;
+        padding: 0 0 20px 16px;
+        @include tablet{
+            padding: 0 0 15px 0;
+        }
+    }
+    &__title{
+        font-size: 32px;
+        font-weight: bolder;
+        padding: 0 0 45px 16px;
+        color: #CCD6F6;
+        letter-spacing: 2%;
+        line-height: 40px;
+        @include tablet{
+            padding: 0 0 45px 0;
+        }
+    }
+    &__image{
+        object-fit: cover;
+        position: relative;
+        padding: 0 0 20px 0;
+        @include tablet{
+            border-radius: 15px;
+            padding: 0;
+            object-fit: fill;
+        }
+    }
+    &__description{
+        position: absolute;
+        font-size: 15px;
+        color: #CCD6F6;
+        padding: 80px 22px 20px 25px;
+        line-height: 24px;
+        bottom: -130px;
+
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        background-image: url('/project/bgDescription.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include tablet{
+            position: relative;
+            font-size: 18px;
+            padding: 26px 34px 31px 50px;
+            border-radius: 14px;
+            bottom: 0;
+            text-align: start;
+        }
+    }
+    &__card{
+        position: relative;
+    }
+}
+
+.container{
+    position: relative;
+    :global(.swiper-wrapper) {
+        padding: 0 0 130px 0 !important;
+    }
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+        position: absolute !important;
+        top: auto !important;
+        bottom: 130px !important;
+        transform: none !important;
+        color: transparent !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        height: 40px !important;
+        z-index: 2 !important;
+        border: 1px solid #fff !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px 16px;
+        transition: all 0.3s ease;
+
+    &:active {
+        background-color: #fff;
+        color: #000;
+    }
+  }
+    :global(.swiper-button-next) {
+        left: 75px !important;
+        background-image: url('/project/arrow.svg');
+        transform: rotate(180deg) !important;
+    }
+
+    :global(.swiper-button-prev) {
+        left: 22px !important;
+        background-image: url('/project/arrow.svg');
+
+    }
+
+    :global(.swiper-button-prev:after),
+    :global(.swiper-button-next:after) {
+        font-size: 14px !important;
+        font-weight: bold !important;
+    }
+}
+
+.desktop{
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+    overflow: visible;
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        position: relative;
+    }
+    &__icons{
+        display: flex;
+        flex-direction: row;
+        gap: 17px;
+        padding: 40px 0 0 30px;
+    }
+    &__link{
+        display: inline-block;
+    }
+    &__imageWrapper {
+        position: relative;
+        border-radius: 15px;
+        perspective: 800px;
+
+        img{
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+        }
+    }
+    .leftText {
+        flex-direction: row;
+    }
+    .leftText &__imageWrapper img {
+        box-shadow: #3B1564 -20px -19px 0px 1px;
+    } 
+    .leftText &__imageWrapper a:hover img {
+        transform: rotateY(-8deg) rotateX(5deg) scale(1.03);
+    }
+    .leftText &__text {
+        transform: translateX(30px);
+        z-index: 3;
+        position: relative;
+    }
+    .rightText {
+        text-align: right;
+        flex-direction: row-reverse;
+      
+    } 
+    .rightText &__icons {
+        justify-content: flex-end;
+        padding-left: auto;
+        padding-right: 30px;
+    }
+    .rightText &__imageWrapper img {
+        box-shadow: #2B0B3A 20px -19px 0px 1px;
+    }
+    .rightText &__imageWrapper a:hover img {
+        transform: rotateY(8deg) rotateX(5deg) scale(1.03);
+    }
+    .rightText &__text {
+        transform: translateX(-30px);
+        z-index: 3;
+        position: relative;
+    }
+
+    .bgDouble::before,
+    .bgDouble::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    .bgDouble::before {
+        width: 100%;
+        height: 720px;
+        background: radial-gradient(50% 50% at 50% 50%, #4e1d93, rgba(50, 15, 133, 0));
+        top: -200px;
+        left: -100px;
+    }
+
+    .bgDouble::after {
+        width: 100%;
+        height: 700px;
+        background: radial-gradient(50% 50% at 50% 50%, #4e1d93, rgba(50, 15, 133, 0));
+        bottom: -150px;
+        right: -150px;
+    }
+
+    .bgSingle::before {
+    content: "";
+        position: absolute;
+        width: 100%;
+        height: 641px;
+        border-radius: 50%;
+        filter: blur(120px);
+        background: radial-gradient(50% 50% at 50% 50%, #4e1d93, rgba(50, 15, 133, 0));
+        top: -200px;
+        left: -150px;
+        z-index: -1;
+    }
+
+    .bgDouble::after,
+    .bgDouble::before,
+    .bgSingle::before{
+        animation: glowMove 6s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes glowMove {
+  from {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.2) translate(20px, -20px);
+    opacity: 1;
+  }
+}
