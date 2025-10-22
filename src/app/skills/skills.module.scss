@@ -1,0 +1,106 @@
+@use "../styles/media" as *;
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    @include tablet{
+        gap: 32px;
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 16px;
+        @include tablet{
+            gap: 0px;
+        }
+    }
+    &__title{
+        font-size: 32px;
+        line-height: 40px;
+        @include tablet{
+            font-size: 24px;
+        }
+    }
+    &__highlight{
+        color: #A362FF;
+    }
+    &__subtitle{
+        font-size: 14px;
+        @include tablet{
+            font-size: 17px;
+        }
+    }
+    &__icons{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;    
+        gap: 17px;
+    }
+    &__row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        gap: 10px;
+        @include tablet{
+            gap: 12px;
+        }
+    }
+    &__iconWrapper{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #251C31;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+    }
+    &__container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 220px;
+        @include tablet{
+            gap: 290px;
+        }
+    }
+    &__lines{
+        position: absolute;
+    }
+    &__center{
+        position: relative;
+        background: linear-gradient(135deg, #30108060, #7840AD36);
+        padding: 25px 30px;
+        border-radius: 50%;
+        &::before{
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(
+            circle,
+            rgba(118, 60, 172, 1) 0%,     // #763CAC — центр
+            rgba(50, 15, 133, 0.7) 60%,   // плавный переход
+            rgba(50, 15, 133, 0) 100%     // прозрачные края
+            );
+            box-shadow: 0 0 50px rgba(118, 60, 172, 0.5);
+            bottom: -140px;
+            width: 310px;
+            height: 190px;
+            margin: 0 auto;
+            left: 50%;
+            right: 50%;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+        }
+    }
+}
