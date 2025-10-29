@@ -75,21 +75,48 @@
     }
     &__lines{
         position: absolute;
+        top: 70px;   
+        z-index: -2;     
+    }
+    &__line{
+        position: absolute;
+        
+        &.zero{
+            top: 30px;
+            right: 15px;
+        }
+        &.first{
+            top: 30px;
+            right: 10px;
+        }
+        &.second{
+            right: 10px;
+        }
+        &.third{
+            left: -10px;
+        }
+        &.fourth{
+            left: 15px;
+        }
+        &.fifth{
+            left: 20px;
+        }
     }
     &__center{
         position: relative;
         background: linear-gradient(135deg, #30108060, #7840AD36);
         padding: 25px 30px;
         border-radius: 50%;
+        z-index: 1;
         &::before{
             content: "";
             position: absolute;
             transform: translate(-50%, -50%);
             background: radial-gradient(
             circle,
-            rgba(118, 60, 172, 1) 0%,     // #763CAC — центр
-            rgba(50, 15, 133, 0.7) 60%,   // плавный переход
-            rgba(50, 15, 133, 0) 100%     // прозрачные края
+            rgba(118, 60, 172, 1) 0%,     
+            rgba(50, 15, 133, 0.7) 60%,   
+            rgba(50, 15, 133, 0) 100%     
             );
             box-shadow: 0 0 50px rgba(118, 60, 172, 0.5);
             bottom: -140px;

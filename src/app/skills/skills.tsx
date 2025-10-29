@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import stl from "./skills.module.scss";
 import Image from "next/image";
 
+import Line0 from '../../../public/skills/lineIcon/line0.svg';
+import Line1 from '../../../public/skills/lineIcon/line1.svg';
+import Line2 from '../../../public/skills/lineIcon/line2.svg';
+import Line3 from '../../../public/skills/lineIcon/line3.svg';
+import Line4 from '../../../public/skills/lineIcon/line4.svg';
+import Line5 from '../../../public/skills/lineIcon/line5.svg';
+
+const line = [Line0, Line1, Line2, Line3, Line4, Line5];
+const lineNames = ['zero', 'first', 'second', 'third', 'fourth', 'fifth'];
+
 const Skills = () => {
     return (
         <section className={stl.skills}>
@@ -56,12 +66,14 @@ const Skills = () => {
                     </div>
                 </div>
                 <div className={stl.skills__lines}>
-                    <span className={stl.skills__line}/>
-                    <span className={stl.skills__line}/>
-                    <span className={stl.skills__line}/>
-                    <span className={stl.skills__line}/>
-                    <span className={stl.skills__line}/>
-                    <span className={stl.skills__line}/>
+                    {line.map((line, index) => (
+                        <Image 
+                        src={line} 
+                        alt="line" 
+                        key={index} 
+                        objectFit="fill"
+                        className={`${stl.skills__line} ${stl[lineNames[index]]}`}/>
+                    ))}
                 </div>
                 <section className={stl.skills__centerWrapper}>
                 <div className={stl.skills__center}>
