@@ -78,11 +78,13 @@ const Skills = () => {
                 <section className={stl.skills__centerWrapper}>
                 <div className={stl.skills__center}>
                     <Image src='/skills/center.svg' alt="center" width={76} height={90} className={stl.skills__centerImg}/>
+                    <Image src='/skills/bottomArcZero.svg' alt="bottomArc" width={295} height={165} className={`${stl.skills__bottomArc} ${stl.zero}`}/>
+                    <Image src='/skills/bottomArcFirst.svg' alt="bottomArc" width={305} height={275} className={`${stl.skills__bottomArc} ${stl.first}`}/>
                 </div>
                 <div className={stl.skills__centerLines}>
-                    <span className={stl.skills__centerLine}/>
-                    <span className={stl.skills__centerLine}/>
-                    <span className={stl.skills__centerLine}/>
+                    <span className={`${stl.skills__centerLine} ${stl.zero}`}/>
+                    <span className={`${stl.skills__centerLine} ${stl.first}`}/>
+                    <span className={`${stl.skills__centerLine} ${stl.second}`}/>
                 </div>
                 </section>
             </section>
