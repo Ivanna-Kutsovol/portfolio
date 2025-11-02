@@ -82,9 +82,41 @@ const Skills = () => {
                     <Image src='/skills/bottomArcFirst.svg' alt="bottomArc" width={305} height={275} className={`${stl.skills__bottomArc} ${stl.first}`}/>
                 </div>
                 <div className={stl.skills__centerLines}>
-                    <span className={`${stl.skills__centerLine} ${stl.zero}`}/>
-                    <span className={`${stl.skills__centerLine} ${stl.first}`}/>
-                    <span className={`${stl.skills__centerLine} ${stl.second}`}/>
+                    <Image src='/skills/centerLineZero.svg' alt="centerLine" width={695} height={270} className={`${stl.skills__centerLine} ${stl.zero}`}/>
+                    <Image src='/skills/centerLineFirst.svg' alt="centerLine" width={765} height={270} className={`${stl.skills__centerLine} ${stl.first}`}/>
+                    <Image src='/skills/centerLineSecond.svg' alt="centerLine" width={881} height={270} className={`${stl.skills__centerLine} ${stl.second}`}/>
+                </div>
+                <div className={stl.skills__orbit}>
+                    <div className={`${stl.skills__orbitIcon} ${stl.ai}`}>
+                        <Image src='/skills/orbitIcon/ai.svg' alt="ai" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.code}`}>
+                        <Image src='/skills/orbitIcon/code.svg' alt="code" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.css}`}>
+                        <Image src='/skills/orbitIcon/css.svg' alt="css" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.figma}`}>
+                        <Image src='/skills/orbitIcon/figma.svg' alt="figma" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.google}`}>
+                        <Image src='/skills/orbitIcon/google.svg' alt="google" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.in}`}>
+                        <Image src='/skills/orbitIcon/in.svg' alt="in" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.js}`}>
+                        <Image src='/skills/orbitIcon/js.svg' alt="js" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.node}`}>
+                        <Image src='/skills/orbitIcon/node.svg' alt="node" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.react}`}>
+                        <Image src='/skills/orbitIcon/react.svg' alt="react" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
+                    <div className={`${stl.skills__orbitIcon} ${stl.xd}`}>
+                        <Image src='/skills/orbitIcon/xd.svg' alt="xd" width={26} height={26} className={stl.skills__iconOrbit}/>
+                    </div>
                 </div>
                 </section>
             </section>
