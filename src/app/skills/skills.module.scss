@@ -129,10 +129,11 @@
             right: 50%;
             border-radius: 50%;
             filter: blur(40px);
-            z-index: -1;
+            z-index: -5;
             @include tablet{
-                width: 542px;
+                width: 500px;
                 height: 330px;
+                bottom: -300px;
             }
         }
         @include tablet{
@@ -158,9 +159,23 @@
         left: 50%;
         &.zero{
             top: 75px;
+            width: 167px;
+            height: auto;
+            @include tablet{
+                top: 120px;
+                width: 295px;
+                height: auto;
+            }
         }
         &.first{
             top: 40px;
+            width: 173px;
+            height: auto;
+            @include tablet{
+                top: 90px;
+                width: 305px;
+                height: auto
+            }
         }
     }
     &__centerLines{
