@@ -5,17 +5,23 @@
     flex-direction: column;
     gap: 40px;
     padding: 0 16px;
-    @include tablet{
+    align-items: center;
+    @include laptop{
+        padding: 0 150px;
+        
+    }
+    @include desktop{
         padding: 0 150px;
         flex-direction: row;
         gap: 115px;
+        align-items: start;
     }
 
     &__main{
         display: flex;
         flex-direction: column;
         gap: 40px;
-        @include tablet{
+        @include desktop{
             width: 50%;
         }
     }
@@ -84,9 +90,9 @@
     gap: 16px;
     font-size: 16px;
     padding: 0 0 110px 0;
-    max-width: 560px;
-    @include tablet{
+    @include desktop{
         padding: 0 0 220px 0;
+        max-width: 560px;
     }
     &__containerName{
         display: flex;
@@ -186,41 +192,40 @@
 }
 
 .alert {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background: linear-gradient(135deg, #2C1250, #38126d);
-  color: white;
-  border: 1px solid #693B93;
-  border-radius: 12px;
-  padding: 16px 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  z-index: 1000;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: linear-gradient(135deg, #2C1250, #38126d);
+    color: white;
+    border: 1px solid #693B93;
+    border-radius: 12px;
+    padding: 16px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 1000;
 
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  
-  &.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &.hide {
     opacity: 0;
     transform: translateY(20px);
-  }
+    transition: all 0.3s ease;
 
-  &__text {
+&.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+&.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+&__text {
     margin: 0;
-  }
+}
 
-  &__button {
+&__button {
     background: transparent;
     border: 1px solid #9c63f9;
     color: #fff;
@@ -231,8 +236,8 @@
     transition: background 0.3s, transform 0.2s;
 
     &:hover {
-      background: #9c63f9;
-      transform: scale(1.05);
+        background: #9c63f9;
+        transform: scale(1.05);
     }
-  }
+}
 }
