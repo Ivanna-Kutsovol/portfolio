@@ -33,7 +33,7 @@ const Project = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 650);
         }
 
         handleResize();
@@ -55,6 +55,7 @@ const Project = () => {
                         navigation
                         autoplay={{ delay: 2500 }}
                         loop={true}
+                        centeredSlides={true}
                     >
                 {...array.map((item, index) => (
                     <SwiperSlide key={index} className={stl.project__card}>

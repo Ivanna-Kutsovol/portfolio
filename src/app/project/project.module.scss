@@ -3,7 +3,7 @@
 .project{
     padding: 177px 0 80px 0;
     @include tablet{
-        padding: 160px 85px 240px 105px;
+        padding: 320px 85px 240px 105px;
     }
     &__text{
         font-size: 16px;
@@ -18,16 +18,22 @@
         font-weight: bolder;
         padding: 0 0 45px 16px;
         color: #CCD6F6;
-        letter-spacing: 2%;
         line-height: 40px;
+        height: 95px;
         @include tablet{
             padding: 0 0 45px 0;
+            height: fit-content;
         }
     }
     &__image{
         object-fit: cover;
         position: relative;
         padding: 0 0 20px 0;
+        margin: 0 auto;
+        width: clamp(375px, 100vw, 580px);
+        height: auto;
+        transition: width 0.4s ease;
+
         @include tablet{
             border-radius: 15px;
             padding: 0;
@@ -41,6 +47,8 @@
         padding: 80px 22px 20px 25px;
         line-height: 24px;
         bottom: -130px;
+        width: 100%;
+        height: 200px;
 
         backdrop-filter: blur(50px);
         -webkit-backdrop-filter: blur(50px);
@@ -48,17 +56,29 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        @include tablet{
+        @include laptop{
+            transform: translateY(170%);
+            height: fit-content;
+            padding: 26px 34px 31px 50px;
+            border-radius: 14px;
+            min-width: 570px;
+        }
+        @include desktop{
             position: relative;
             font-size: 18px;
             padding: 26px 34px 31px 50px;
             border-radius: 14px;
             bottom: 0;
             text-align: start;
+            height: fit-content;
         }
     }
     &__card{
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -88,7 +108,7 @@
         background-color: #fff;
         color: #000;
     }
-  }
+    }
     :global(.swiper-button-next) {
         left: 75px !important;
         background-image: url('/project/arrow.svg');
@@ -118,12 +138,18 @@
         align-items: center;
         gap: 0px;
         position: relative;
+        @include laptop{
+            flex-direction: column;
+        }
     }
     &__icons{
         display: flex;
         flex-direction: row;
         gap: 17px;
         padding: 40px 0 0 30px;
+        @include laptop{
+            display: none;
+        }
     }
     &__link{
         display: inline-block;
@@ -138,8 +164,16 @@
             transform-style: preserve-3d;
         }
     }
+    .leftText &__text,
+    .rightText &__text {
+        z-index: 3;
+        position: relative;
+    }
     .leftText {
         flex-direction: row;
+        @include laptop{
+            flex-direction: column;
+        }
     }
     .leftText &__imageWrapper img {
         box-shadow: #3B1564 -20px -19px 0px 1px;
@@ -149,13 +183,16 @@
     }
     .leftText &__text {
         transform: translateX(30px);
-        z-index: 3;
-        position: relative;
+        @include laptop{
+            transform: translateX(-90px);
+        }
     }
     .rightText {
         text-align: right;
         flex-direction: row-reverse;
-      
+        @include laptop{
+            flex-direction: column;
+        }
     } 
     .rightText &__icons {
         justify-content: flex-end;
@@ -170,8 +207,9 @@
     }
     .rightText &__text {
         transform: translateX(-30px);
-        z-index: 3;
-        position: relative;
+        @include laptop{
+            transform: translateX(-50px);
+        }
     }
 
     .bgDouble::before,
@@ -220,12 +258,12 @@
 }
 
 @keyframes glowMove {
-  from {
-    transform: scale(1) translate(0, 0);
-    opacity: 0.7;
-  }
-  to {
-    transform: scale(1.2) translate(20px, -20px);
-    opacity: 1;
-  }
+    from {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.7;
+    }
+    to {
+        transform: scale(1.2) translate(20px, -20px);
+        opacity: 1;
+    }
 }
