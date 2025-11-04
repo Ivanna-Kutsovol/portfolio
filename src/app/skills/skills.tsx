@@ -83,7 +83,7 @@ const Skills = () => {
                 </div>
                 <div className={stl.skills__centerLines}>
                     <Image src='/skills/centerLineZero.svg' alt="centerLine" width={695} height={270} className={`${stl.skills__centerLine} ${stl.zero}`}/>
-                    <Image src='/skills/centerLineFirst.svg' alt="centerLine" width={765} height={270} className={`${stl.skills__centerLine} ${stl.first}`}/>
+                    <Image src='/skills/centerLIneFirst.svg' alt="centerLine" width={765} height={270} className={`${stl.skills__centerLine} ${stl.first}`}/>
                     <Image src='/skills/centerLineSecond.svg' alt="centerLine" width={881} height={270} className={`${stl.skills__centerLine} ${stl.second}`}/>
                 </div>
                 <div className={stl.skills__orbit}>
