@@ -45,7 +45,7 @@ const Project = () => {
     },[]);
 
     return (
-        <section className={stl.project}>
+        <section className={stl.project} id="project">
             <section className={stl.container}>
                 {isMobile ? (
                     <Swiper

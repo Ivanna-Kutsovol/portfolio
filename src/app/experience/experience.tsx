@@ -30,7 +30,7 @@ const array = [{
 
 const Experience = () => {
     return (
-        <section className={stl.experience}>
+        <section className={stl.experience} id="experience">
             <h1 className={stl.experience__title}>Work Experience</h1>
             <section className={stl.experience__container}>
                 {array.map((item, index) => (

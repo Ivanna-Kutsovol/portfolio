@@ -14,7 +14,7 @@ const lineNames = ['zero', 'first', 'second', 'third', 'fourth', 'fifth'];
 
 const Skills = () => {
     return (
-        <section className={stl.skills}>
+        <section className={stl.skills} id="skills">
             <section className={stl.skills__text}>
                 <h1 className={stl.skills__title}>Using these skills, <span className={stl.skills__highlight}>I craft websites</span></h1>
                 <h2 className={stl.skills__subtitle}>that don’t just work — they stand out.</h2>

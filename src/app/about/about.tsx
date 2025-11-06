@@ -22,7 +22,7 @@ const About = () => {
         }
     }, [index, text, speed]);
     return(
-        <section className={stl.about}>
+        <section className={stl.about} id="about">
             <section className={stl.about__first}>
                 <div className={stl.about__containerImage}>
                     <h1 className={stl.about__title}>Hello! I Am <span className={stl.about__name}>Ivanna</span> </h1>
