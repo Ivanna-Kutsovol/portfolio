@@ -19,11 +19,10 @@ export const Header = () => {
                     <span className={stl.bar}/>
                 </button>
             <nav className={`${stl.header__nav} ${isOpen ? stl.open : ""}`}>
-                <Link className={stl.header__link} href="/">Home</Link>
                 <Link className={stl.header__link} href="/#about">About</Link>
-                <Link className={stl.header__link} href="/#contact">Experience</Link>
-                <Link className={stl.header__link} href="/#contact">Skills</Link>
-                <Link className={stl.header__link} href="/#contact">Portfolio</Link>
+                <Link className={stl.header__link} href="/#experience">Experience</Link>
+                <Link className={stl.header__link} href="/#skills">Skills</Link>
+                <Link className={stl.header__link} href="/#project">Portfolio</Link>
                 <Image className={stl.header__gradient} src={Gradient} alt="gradient" width={333} height={333}/>
             </nav>
         </header>
