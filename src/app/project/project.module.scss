@@ -5,12 +5,25 @@
     @include tablet{
         padding: 320px 85px 240px 105px;
     }
+    &__links{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        @include tablet{
+        }
+    }
     &__text{
         font-size: 16px;
         color: #9857D3;
         padding: 0 0 20px 16px;
         @include tablet{
             padding: 0 0 15px 0;
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+                transition: 0.5s;
+                color: #CCD6F6;
+            }
         }
     }
     &__title{
@@ -140,6 +153,7 @@
         position: relative;
         @include laptop{
             flex-direction: column;
+            align-items: stretch;
         }
     }
     &__icons{
@@ -183,9 +197,6 @@
     }
     .leftText &__text {
         transform: translateX(30px);
-        @include laptop{
-            transform: translateX(-90px);
-        }
     }
     .rightText {
         text-align: right;
@@ -207,8 +218,11 @@
     }
     .rightText &__text {
         transform: translateX(-30px);
+    }
+    .rightText &__links{
+        justify-content: flex-end;
         @include laptop{
-            transform: translateX(-50px);
+            padding: 0;
         }
     }
 
@@ -254,6 +268,15 @@
     .bgDouble::before,
     .bgSingle::before{
         animation: glowMove 6s ease-in-out infinite alternate;
+    }
+}
+
+@media(min-width: 850px) and (max-width: 1250px){
+    .project{
+        &__description{
+            padding: 50px 22px 20px 25px;
+            bottom: -150px;
+        }
     }
 }
 
