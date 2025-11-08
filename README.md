@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio / Personal Website
+# Description
+My personal portfolio website showcasing my projects, skills, and experience in web development. Designed to be interactive, responsive, and visually engaging.
 
-## Getting Started
+Live demo:  
+[Portfolio on Vercel](https://ivannacodeslab.vercel.app/)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Technologies Used
+
+- **Frontend:** Next.js, React, TypeScript 
+- **Styling:** SASS, CSS Modules  
+- **Forms & Interactions:** react-hook-form, Nodemailer for contact form  
+- **Animations & Effects:**  
+  - **Skills Section:** orbit animation to showcase skills dynamically  
+  - **Projects Section:** interactive slider (Swiper)  
+  - Smooth transitions and hover effects throughout the site 
+- **Hosting**: Vercel  
+- **TypeScript** and typings via @types/* 
+
+---
+
+## Key Features
+
+- Fully **responsive design** for mobile, tablet, and desktop  
+- **Interactive sections**: sliders, orbit animation, hover effects  
+- **Contact Form**: works with email sending functionality via Nodemailer  
+- Clean and well-structured **TypeScript (TSX) code**  
+- Smooth **navigation with anchor links**  
+- Modern **UX/UI design**, highlighting skills and projects 
+
+---
+
+## Website Structure
+
+- **About** — short bio and background  
+- **Experience** — work experience and achievements  
+- **Projects** — examples of projects with an interactive slider  
+- **Skills** — list of skills with orbit animation  
+- **Contact** — contact form to send messages directly to email  
+
+**Dependencies**:  
+``json
+"dependencies": {
+    "next": "15.5.5",
+    "nodemailer": "^7.0.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.65.0",
+    "sass": "^1.93.2",
+    "swiper": "^12.0.2"
+},
+"devDependencies": {
+    "@types/node": "^20",
+    "@types/nodemailer": "^7.0.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+} 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Local setup**:
+```bash
+# 1. Clone the repository
+git clone https://github.com/Ivanna-Kutsovol/portfolio.git
+cd ToyHouse
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 2. Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 3. Run the project
+npm run dev
 
-## Learn More
+# 4. Open in browser
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author  
+**Ivanna Kutsovol**  
+GitHub: [@Ivanna-Kutsovol]([https://github.com/Ivanna-Kutsovol)
