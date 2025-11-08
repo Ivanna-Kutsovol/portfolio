@@ -10,9 +10,9 @@
         padding: 0 150px 165px;
     }
     &__title{
-        font-size: 32px;
+        font-size: 30px;
         @include tablet{
-            font-size: 40px;
+            font-size: 38px;
         }
     }
     &__container{
@@ -81,11 +81,13 @@
         }
     }
     &__cardDescription{
-        font-size: 8px;
-        line-height: 10px;
+        font-size: 9px;
+        line-height: 12px;
         max-width: 230px;
 
         @include tablet{
+            font-size: 11px;
+            line-height: 14px;
         }
     }
     &__cardButton{
@@ -118,7 +120,7 @@
         padding: 0 80px 120px;
         &__card{
             gap: 26px;
-            padding: 36px 130px 50px 41px;
+            // padding: 36px 130px 50px 41px;
             justify-content: center;
         }
     }
