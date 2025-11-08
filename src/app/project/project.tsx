@@ -13,6 +13,7 @@ const array = [
     {
         title: 'Positivus Multi-Page Website',
         link: 'https://positivus-ivanna-projects.vercel.app/',
+        gitHub: 'https://github.com/Ivanna-Kutsovol/Positivus',
         cover: '/project/positivusMobile.svg',
         description: 'Multi-page agency website built with Next.js and React. Responsive design, reusable components, animations, sliders, and form validation.',
         desktopCover: '/project/positivus.png',
@@ -21,6 +22,7 @@ const array = [
     {
         title: 'Toy House Online Store',
         link: 'https://toy-house-six.vercel.app/',
+        gitHub: 'https://github.com/Ivanna-Kutsovol/ToyHouse',
         cover: '/project/toyhouseMobile.svg',
         description: 'Pet-project online toy store built with Next.js and React, featuring a product catalog, shopping cart, order form, and interactive UI elements.',
         desktopCover: '/project/toyhouse.png',
@@ -59,8 +61,15 @@ const Project = () => {
                     >
                 {...array.map((item, index) => (
                     <SwiperSlide key={index} className={stl.project__card}>
-                        <h1 className={stl.project__text}>Featured  Project</h1>
-                        <h2 className={stl.project__title}>{item.title}</h2>
+                        <div className={stl.project__links}>
+                            <a href={item.gitHub} target="_blank" rel="noopener noreferrer">
+                                <p className={stl.project__text}>GitHub</p>
+                            </a>
+                            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                                <p className={stl.project__text}>Live Demo</p>
+                            </a>
+                        </div>
+                        <h1 className={stl.project__title}>{item.title}</h1>
                         <a href={item.link} target="_blank" rel="noopener noreferrer">
                             <Image src={item.cover} alt="cover" width={375} height={600} className={stl.project__image} priority/>
                         </a>
@@ -73,8 +82,15 @@ const Project = () => {
                         {array.map((item, index) => (
                             <div key={index} className={`${stl.desktop__card} ${index % 2 === 0 ? stl.leftText : stl.rightText}`}>
                                 <div className={stl.desktop__text}>
-                                    <h1 className={stl.project__text}>Featured  Project</h1>
-                                    <h2 className={stl.project__title}>{item.title}</h2>
+                                    <div className={`${stl.project__links} ${stl.desktop__links}`}>
+                                        <a href={item.gitHub} target="_blank" rel="noopener noreferrer">
+                                            <p className={stl.project__text}>GitHub</p>
+                                        </a>
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                                            <p className={stl.project__text}>Live Demo</p>
+                                        </a>
+                                    </div>
+                                    <h1 className={stl.project__title}>{item.title}</h1>
                                     <p className={stl.project__description}>{item.desktopDescription}</p>
                                     <div className={stl.desktop__icons}>
                                         <Image src={iconClick} alt="icon" width={30} height={30} className={stl.desktop__icon}/>

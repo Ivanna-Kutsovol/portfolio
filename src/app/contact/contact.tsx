@@ -66,11 +66,11 @@ function Contact() {
                 <div className={stl.contact__date}>
                     <div className={stl.contact__dateItem}>
                         <h3 className={stl.contact__dateTitle}>Email:</h3>
-                        <a href="mailto:ivannakucovol@gmail.com" className={stl.contact__dateLink}>ivannakucovol@gmail.com</a>
+                        <a href="mailto:ivanna.codeslab@gmail.com" className={stl.contact__dateLink}>ivanna.codeslab@gmail.com</a>
                     </div>
                     <div className={stl.contact__dateItem}>
                         <h3 className={stl.contact__dateTitle}>Phone:</h3>
-                        <a href="tel:+4356789" className={stl.contact__dateLink}>+123456789</a>
+                        <a href="tel:+436764065103" className={stl.contact__dateLink}>+43 676 4065103</a>
                     </div>
                 </div>
 
